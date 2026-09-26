@@ -1,0 +1,18 @@
+Statelessness in Practice
+
+You learned that REST is stateless, the server doesn't remember previous requests. Here's what that looks like in practice.
+
+Stateful (not REST):
+
+Request 1: POST /login (server remembers you're logged in)
+Request 2: GET /my-profile (server knows who "me" is from memory)
+
+Stateless (REST):
+
+Request 1: POST /auth/token (server gives you a token)
+Request 2: GET /users/42 with Authorization: Bearer <token>
+           (you prove who you are on EVERY request)
+
+In the stateless model, every request is self-contained. The token carries your identity. If the server crashes and restarts between your two requests, nothing breaks, your second request still has everything it needs.
+
+This is why REST scales well. With stateless APIs, you can put 100 servers behind a load balancer and any server can handle any request. No server needs to know what another server did five seconds ago.

@@ -1,0 +1,18 @@
+Reading Status Codes Like a Developer
+
+When an API call fails, the status code tells you where to start debugging:
+
+Got a 4xx? The problem is in your request.
+
+400: check your request body (malformed JSON? missing fields?)
+401: check your authentication token
+403: check your permissions
+404: check the URI (typo? wrong ID?)
+422: check your data types and required fields
+Got a 5xx? The problem is on the server.
+
+500: the server has a bug, not your fault, but you may need to report it
+503: the server is down, try again later
+Got a 2xx? Everything worked. Move on.
+
+This triage process will save you hours of debugging. Always check the status code before examining anything else in the response.

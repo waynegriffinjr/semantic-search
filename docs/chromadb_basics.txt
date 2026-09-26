@@ -1,0 +1,19 @@
+ChromaDB Core Concepts
+Collection: A group of documents - like a table in a relational database. You might have one collection for "course notes" and another for "product documentation."
+Document: A text string stored in the collection. This is your chunk of text.
+Embedding: The vector representation of the document. ChromaDB can generate these automatically or accept pre-computed ones.
+ID: A unique identifier for each document (you provide this).
+Metadata: Optional key-value pairs attached to each document (source file, category, date, etc.). You can filter queries by metadata.
+ 
+Installation
+pip install chromadb
+
+
+That’s it. No server to configure, no Docker container to run. ChromaDB starts as an in-memory database by default, with options to persist to disk.
+ 
+The Basic Workflow
+Every ChromaDB interaction follows this pattern:
+1. Create (or get) a collection
+2. Add documents with IDs, text, and optional metadata
+3. Query with a text string or embedding
+4. Get back the most similar documents with scores

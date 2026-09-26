@@ -1,0 +1,11 @@
+The Complete Pipeline
+Every semantic search system follows the same architecture:
+Ingestion phase (run once):
+1.	Load raw documents (text files, PDFs, web pages, databases)
+2.	Chunk them into searchable pieces with your chosen strategy
+3.	Embed and store the chunks in ChromaDB with metadata
+Query phase (run per search):
+1.	Receive a user’s question
+2.	Embed the question using the same model
+3.	Query ChromaDB for the most similar chunks
+4.	Display the results with scores and source information

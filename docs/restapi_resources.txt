@@ -1,0 +1,10 @@
+Resources: The Nouns of Your API
+
+In REST, everything revolves around resources. A resource is any thing your API lets you interact with. In a bookstore API:
+
+Books are a resource
+Authors are a resource
+Orders are a resource
+Reviews are a resource
+
+Resources are nouns, not verbs. This is one of the most important rules in REST design, and one of the most commonly broken.
